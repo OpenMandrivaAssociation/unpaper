@@ -1,7 +1,7 @@
 Summary:	Post-processing scanned and photocopied book pages
 Name:		unpaper
 Version:	1.1
-Release:	%mkrel 1
+Release:	%mkrel 2
 License:	GPL
 Group:		Graphics
 
