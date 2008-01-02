@@ -8,6 +8,7 @@ Group:		Graphics
 Source:		http://download.berlios.de/unpaper/unpaper-1_1.tar.bz2
 
 Url:		http://unpaper.berlios.de/
+BuildRoot:	%_tmppath/%name-%version-%release-root
 
 %description
 unpaper is a post-processing tool for scanned sheets of paper,
