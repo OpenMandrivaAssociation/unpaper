@@ -1,11 +1,12 @@
 Summary:	Post-processing scanned and photocopied book pages
 Name:		unpaper
-Version:	1.1
-Release:	%mkrel 2
+Version:	0.3
+Release:	%mkrel 1
 License:	GPL
 Group:		Graphics
-
-Source:		http://download.berlios.de/unpaper/unpaper-1_1.tar.bz2
+# the newest version is 0.3, the old one was 1.1. Epoch is needed.
+Epoch:		1
+Source:		http://download.berlios.de/unpaper/unpaper-%{version}.tar.gz
 
 Url:		http://unpaper.berlios.de/
 BuildRoot:	%_tmppath/%name-%version-%release-root
@@ -38,17 +39,12 @@ tiff2pdf.
 
 
 %prep
-# remove old directory
-rm -rf $RPM_BUILD_DIR/%{name}-%{version}
-# create new directory
-mkdir $RPM_BUILD_DIR/%{name}-%{version}
-
-%setup -q -T -D -a 0 -n %{name}-%{version}
+%setup -q
 
 
 
 %build
-gcc $CFLAGS -DTIMESTAMP="\"`date +'%%Y-%%M-%%d %%H:%%m:%%S'`\"" -lm -O3 -funroll-all-loops -o unpaper unpaper.c
+gcc ${CFLAGS} -lm -o unpaper src/unpaper.c
 
 
 
@@ -65,5 +61,5 @@ rm -fr %buildroot
 
 %files
 %defattr(-,root,root)
-%doc readme.txt unpaper.html img
+%doc doc/img doc/index.html doc/unpaper.html README LICENSE
 %_bindir/*
