@@ -9,7 +9,7 @@ Url:		http://unpaper.berlios.de/
 BuildRequires:  netpbm                                                                                                                                                                                         
 BuildRequires:  xsltproc
 
-Obsoletes:    < %{name}-%{EVRD}
+Obsoletes:   %{name} < %{EVRD}
 
 %description
 unpaper is a post-processing tool for scanned sheets of paper,
