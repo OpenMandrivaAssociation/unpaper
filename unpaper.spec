@@ -8,8 +8,11 @@ Group:		Graphics
 Epoch:		1
 Source:		http://www.flameeyes.eu/files/%{name}-%{version}.tar.xz
 Url:		http://unpaper.berlios.de/
-BuildRequires:  netpbm                                                                                                                                                                                         
 BuildRequires:  xsltproc
+BuildRequires:	netpbm
+BuildRequires:	pkgconfig(libavformat)
+BuildRequires:	pkgconfig(libavcodec)
+BuildRequires:	pkgconfig(libavutil)
 
 %description
 unpaper is a post-processing tool for scanned sheets of paper,
