@@ -1,7 +1,7 @@
 Summary:	Post-processing scanned and photocopied book pages
 Name:		unpaper
-Version:	0.4.2
-Release:	2
+Version:	6.1
+Release:	1
 License:	GPL
 Group:		Graphics
 # the newest version is 0.3, the old one was 1.1. Epoch is needed.
@@ -50,6 +50,6 @@ tiff2pdf.
 rm -rf %{buildroot}%{_datadir}/doc
 
 %files
-%doc doc/img doc/index.html doc/unpaper.html README COPYING
+%doc doc/img doc/*.md README.md COPYING
 %{_bindir}/*
 %{_mandir}/man1/*
