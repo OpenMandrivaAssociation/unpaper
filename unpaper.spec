@@ -1,7 +1,7 @@
 Summary:	Post-processing scanned and photocopied book pages
 Name:		unpaper
 Version:	6.1
-Release:	1
+Release:	2
 License:	GPL
 Group:		Graphics
 # the newest version is 0.3, the old one was 1.1. Epoch is needed.
