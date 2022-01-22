@@ -18,6 +18,7 @@ BuildRequires:	pkgconfig(libavformat)
 BuildRequires:	pkgconfig(libavcodec)
 BuildRequires:	pkgconfig(libavutil)
 BuildRequires:	meson
+BuildRequires:	python-sphinx
 
 %description
 unpaper is a post-processing tool for scanned sheets of paper,
