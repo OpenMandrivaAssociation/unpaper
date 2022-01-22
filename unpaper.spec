@@ -1,18 +1,23 @@
+# Let's package a snapshot, there haven't been any
+# releases since 2014, but the repository still seems
+# active
+# Among other things, the snapshot works with ffmpeg 5.0.
+%define snapshot 20220122
+
 Summary:	Post-processing scanned and photocopied book pages
 Name:		unpaper
-Version:	6.1
-Release:	2
+Version:	6.1.1
+Release:	%{?snapshot:0.%{snapshot}.}1
 License:	GPL
 Group:		Graphics
-# the newest version is 0.3, the old one was 1.1. Epoch is needed.
-Epoch:		1
-Source:		http://www.flameeyes.eu/files/%{name}-%{version}.tar.xz
-Url:		http://unpaper.berlios.de/
+Source:		https://github.com/unpaper/unpaper/archive/refs/heads/main.tar.gz#/%{name}-%{snapshot}.tar.gz
+Url:		https://github.com/unpaper/unpaper
 BuildRequires:  xsltproc
 BuildRequires:	netpbm
 BuildRequires:	pkgconfig(libavformat)
 BuildRequires:	pkgconfig(libavcodec)
 BuildRequires:	pkgconfig(libavutil)
+BuildRequires:	meson
 
 %description
 unpaper is a post-processing tool for scanned sheets of paper,
@@ -41,18 +46,16 @@ tiff2pdf.
 
 
 %prep
-%setup -q
-
+%autosetup -p1 -n %{name}-main
+%meson
 
 %build
-%configure2_5x
-%make
+%meson_build
 
 %install
-%makeinstall_std
-rm -rf %{buildroot}%{_datadir}/doc
+%meson_install
 
 %files
-%doc doc/img doc/*.md README.md COPYING
+%doc doc/img doc/*.md README.md
 %{_bindir}/*
 %{_mandir}/man1/*
