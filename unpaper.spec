@@ -1,16 +1,12 @@
-# Let's package a snapshot, there haven't been any
-# releases since 2014, but the repository still seems
-# active
-# Among other things, the snapshot works with ffmpeg 5.0.
-%define snapshot 20220122
+#define snapshot 20220122
 
 Summary:	Post-processing scanned and photocopied book pages
 Name:		unpaper
-Version:	6.1.1
+Version:	7.0.0
 Release:	%{?snapshot:0.%{snapshot}.}1
 License:	GPL
 Group:		Graphics
-Source:		https://github.com/unpaper/unpaper/archive/refs/heads/main.tar.gz#/%{name}-%{snapshot}.tar.gz
+Source:		https://github.com/unpaper/unpaper/releases/download/unpaper-%{version}/unpaper-%{version}.tar.xz
 Url:		https://github.com/unpaper/unpaper
 BuildRequires:  xsltproc
 BuildRequires:	netpbm
@@ -47,7 +43,7 @@ tiff2pdf.
 
 
 %prep
-%autosetup -p1 -n %{name}-main
+%autosetup -p1
 %meson
 
 %build
