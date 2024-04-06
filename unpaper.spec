@@ -1,7 +1,7 @@
 Summary:	Post-processing scanned and photocopied book pages
 Name:		unpaper
 Version:	7.0.0
-Release:	2
+Release:	3
 License:	GPL
 Group:		Graphics
 Source:		https://github.com/unpaper/unpaper/releases/download/unpaper-%{version}/unpaper-%{version}.tar.xz
